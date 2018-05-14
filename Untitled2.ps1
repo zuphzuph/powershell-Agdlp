@@ -22,7 +22,7 @@ ForEach ($item In $group)
         Write-Host -ForegroundColor Green "Folder $($item.GroupName) created!" 
     }
 #add permissions on active directory groups folder on D drive
- (ForEach item in -Path D:\$domain ($grouppermission)
+ (ForEach item in -Path D:\$domain ($grouppermission))
     { 
         $Acl = Get-Acl "D:\$domain"
         $Ar = New-Object  system.security.accesscontrol.filesystemaccessrule("$group","Write","Read","execute","Allow")
